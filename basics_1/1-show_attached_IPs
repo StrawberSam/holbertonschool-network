@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # Affiche toutes les adresses IPv4 actives (sauf localhost)
+
 # grep -oP '(?<=inet\s)\d+(\.\d+){3}' = extrait uniquement les adresses ip au format x.x.x.x
 if config | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
