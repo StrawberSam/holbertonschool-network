@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Backup du fichier /etc/hosts.bak
+sudo cp /etc/hosts /etc/hosts.bak
+
+# supprimer les anciennes entrées de localhost et facebook.com
+sudo sed -i '/localhost/d' /etc/hosts
+sudo sed -i '/facebook.com/d' /etc/hosts
+
+# Ajouter les nouvelles entrées
+echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts
+echo "8.8.8.8 localhost" | sudo tee -a /etc/hosts
